@@ -3,124 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfólio de Davi Wendell Ferreira de Lima — estudante de Ciência da Computação e desenvolvedor web.">
-  <meta name="theme-color" content="#070a12">
-  <title>Davi Wendell — Desenvolvedor Web</title>
+  <meta name="description" content="Portfólio de Davi Wendell Ferreira de Lima — desenvolvimento web e produtos digitais.">
+  <meta name="theme-color" content="#f0eee8">
+  <title>Davi Wendell — Portfólio</title>
   <style>
-    :root {
-      --bg: #070a12;
-      --surface: #0d1220;
-      --surface-2: #11192a;
-      --ink: #f4f7fb;
-      --muted: #9aa8bd;
-      --line: rgba(168, 184, 214, .16);
-      --violet: #9b7bff;
-      --cyan: #62e6ff;
-      --lime: #b7f36b;
-      --max: 1160px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
-    .shell { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 26px 0; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: -.02em; }
-    .brand-mark { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; color: var(--cyan); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .nav-links { display: flex; gap: 26px; color: var(--muted); font-size: .92rem; }
-    .nav-links a:hover { color: var(--ink); }
-    .hero { position: relative; min-height: 640px; display: grid; align-items: center; overflow: hidden; }
-    .hero::before { content: ""; position: absolute; width: 580px; height: 580px; right: -170px; top: 15px; border-radius: 50%; background: radial-gradient(circle, rgba(155,123,255,.19), transparent 65%); filter: blur(10px); pointer-events: none; }
-    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 76px; align-items: center; position: relative; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--lime); font: 700 .76rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 20px var(--lime); }
-    h1 { max-width: 760px; margin: 20px 0 22px; font-size: clamp(3.5rem, 8vw, 7.6rem); line-height: .92; letter-spacing: -.085em; font-weight: 780; }
-    h1 em { color: var(--violet); font-style: normal; }
-    .hero-copy { max-width: 590px; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.23rem); }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .button { display: inline-flex; align-items: center; gap: 9px; min-height: 46px; padding: 0 18px; border-radius: 9px; border: 1px solid var(--line); font-weight: 700; font-size: .92rem; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
-    .button:hover { transform: translateY(-2px); border-color: rgba(98,230,255,.65); }
-    .button.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-    .button.ghost { color: var(--ink); background: rgba(255,255,255,.025); }
-    .terminal { border: 1px solid var(--line); background: rgba(13,18,32,.8); border-radius: 16px; box-shadow: 0 28px 90px rgba(0,0,0,.28); overflow: hidden; transform: rotate(1.5deg); }
-    .terminal-bar { display: flex; gap: 7px; padding: 13px 15px; border-bottom: 1px solid var(--line); }
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: #ff6b8b; } .dot:nth-child(2) { background: #ffd166; } .dot:nth-child(3) { background: #7bea9d; }
-    .terminal-body { padding: 28px; min-height: 310px; font: .9rem/2 ui-monospace, SFMono-Regular, Consolas, monospace; color: #c6d0df; }
-    .prompt { color: var(--lime); } .key { color: var(--cyan); } .value { color: #d9b8ff; }
-    .section { padding: 110px 0; border-top: 1px solid var(--line); }
-    .section-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 38px; }
-    .section-kicker { color: var(--violet); font: 700 .75rem/1 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: .12em; text-transform: uppercase; }
-    h2 { margin: 10px 0 0; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1; letter-spacing: -.06em; }
-    .section-intro { max-width: 410px; color: var(--muted); margin: 0; }
-    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .project { min-height: 270px; padding: 25px; background: linear-gradient(145deg, rgba(17,25,42,.96), rgba(13,18,32,.9)); border: 1px solid var(--line); border-radius: 15px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .25s ease, border-color .25s ease; }
-    .project:hover { transform: translateY(-5px); border-color: rgba(155,123,255,.62); }
-    .project-top { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
-    .project-index { color: var(--muted); font: .8rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .project h3 { margin: 22px 0 8px; font-size: 1.55rem; letter-spacing: -.04em; }
-    .project p { color: var(--muted); max-width: 390px; margin: 0; }
-    .project-foot { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 30px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
-    .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: #c8d2e3; font: .72rem ui-monospace, SFMono-Regular, Consolas, monospace; }
-    .arrow { color: var(--cyan); font-size: 1.3rem; }
-    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; }
-    .about-lead { font-size: clamp(1.6rem, 3vw, 2.6rem); line-height: 1.12; letter-spacing: -.055em; margin: 0; }
-    .about-copy { color: var(--muted); max-width: 570px; }
-    .skill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-    .skill { padding: 10px 13px; border: 1px solid var(--line); border-radius: 8px; color: #dbe5f4; background: rgba(255,255,255,.025); }
-    .contact { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: end; }
-    .contact h2 { max-width: 650px; }
-    footer { padding: 30px 0 45px; color: var(--muted); font-size: .88rem; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); }
-    @media (max-width: 800px) { .nav-links { display: none; } .hero { min-height: auto; padding: 70px 0 95px; } .hero-grid, .about-grid, .contact { grid-template-columns: 1fr; gap: 42px; } .terminal { transform: none; } .projects { grid-template-columns: 1fr; } .section { padding: 78px 0; } .section-head { display: block; } .section-intro { margin-top: 22px; } h1 { font-size: clamp(3.45rem, 17vw, 6rem); } footer { display: block; } footer span { display: block; margin-top: 9px; } }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+    :root { --paper:#f0eee8; --ink:#14161c; --muted:#696a70; --line:#c8c5bd; --red:#ef5b4f; --blue:#3147d8; --yellow:#e9d95d; --max:1180px; }
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45} a{color:inherit;text-decoration:none} a:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+    .wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}.topbar{height:76px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ink)}.signature{font-weight:800;letter-spacing:-.05em;font-size:1.1rem}.signature span{color:var(--red)}.nav{display:flex;gap:24px;font-size:.83rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}.nav a:hover{color:var(--red)}
+    .hero{min-height:700px;display:grid;grid-template-columns:1.15fr .85fr;border-bottom:1px solid var(--ink)}.hero-left{padding:90px 0 78px}.kicker{font:700 .74rem/1 monospace;text-transform:uppercase;letter-spacing:.14em;color:var(--blue)}h1{font-size:clamp(5rem,13vw,11rem);line-height:.78;letter-spacing:-.105em;margin:32px 0 40px;font-weight:900}.hero-copy{max-width:430px;font-size:1.18rem;line-height:1.38}.hero-copy strong{font-weight:800}.hero-right{border-left:1px solid var(--ink);padding:90px 0 0 52px;display:flex;flex-direction:column;justify-content:space-between}.stamp{width:158px;height:158px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;font:700 .72rem/1.25 monospace;text-transform:uppercase;letter-spacing:.08em;transform:rotate(-12deg)}.stamp b{font-size:2rem;line-height:1;color:var(--red);display:block}.hero-note{border-top:1px solid var(--ink);padding:18px 0 22px;display:flex;justify-content:space-between;gap:20px;font:700 .75rem monospace;text-transform:uppercase}.hero-note span:last-child{color:var(--muted);text-align:right}
+    .section{border-bottom:1px solid var(--ink);padding:92px 0}.section-label{font:700 .72rem monospace;text-transform:uppercase;letter-spacing:.13em;color:var(--red);margin-bottom:28px}.section-title{font-size:clamp(2.5rem,6vw,5.4rem);line-height:.9;letter-spacing:-.085em;margin:0;font-weight:900}.project-list{margin-top:54px;border-top:1px solid var(--ink)}.project{display:grid;grid-template-columns:80px 1fr 220px 32px;gap:25px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);transition:padding .25s ease,background .25s ease}.project:hover{padding-left:18px;padding-right:18px;background:var(--yellow)}.project-no{font:700 .78rem monospace;color:var(--red)}.project-name{font-size:clamp(1.5rem,3vw,2.6rem);font-weight:900;letter-spacing:-.06em}.project-desc{color:var(--muted);font-size:.92rem}.project-tags{font:700 .69rem monospace;text-transform:uppercase;line-height:1.6;color:var(--blue)}.project-arrow{font-size:1.7rem;color:var(--red)}
+    .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.about-lead{font-size:clamp(1.8rem,3.6vw,3.3rem);font-weight:800;letter-spacing:-.07em;line-height:1.02;margin:0}.about-copy{max-width:570px;color:var(--muted);font-size:1.05rem}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:42px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.fact{padding:18px 16px 18px 0;border-right:1px solid var(--ink)}.fact+ .fact{padding-left:16px}.fact:last-child{border:0}.fact strong{display:block;font-size:1.4rem;letter-spacing:-.05em}.fact small{color:var(--muted);font:700 .68rem monospace;text-transform:uppercase}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}.contact h2{font-size:clamp(3rem,7vw,7rem);line-height:.83;letter-spacing:-.1em;margin:0;font-weight:900}.contact-right{border-top:1px solid var(--ink);padding-top:16px}.contact-right p{color:var(--muted);margin:0 0 24px}.contact-links{display:flex;flex-wrap:wrap;gap:10px}.contact-link{border:1px solid var(--ink);padding:13px 16px;font-weight:800;font-size:.84rem}.contact-link:hover{background:var(--red);color:var(--paper);border-color:var(--red)}footer{padding:22px 0 32px;display:flex;justify-content:space-between;color:var(--muted);font:700 .7rem monospace;text-transform:uppercase}
+    @media(max-width:760px){.wrap{width:min(calc(100% - 32px),var(--max))}.topbar{height:64px}.nav{gap:12px;font-size:.67rem}.hero{display:block;min-height:auto}.hero-left{padding:72px 0 55px}.hero-right{border-left:0;border-top:1px solid var(--ink);padding:38px 0 0;min-height:330px}.stamp{margin-bottom:30px}h1{font-size:clamp(5rem,24vw,9rem)}.section{padding:68px 0}.project{grid-template-columns:42px 1fr 24px;gap:12px}.project-desc,.project-tags{grid-column:2}.project-desc{grid-row:2}.project-tags{grid-row:3}.project-arrow{grid-column:3;grid-row:1}.project:hover{padding-left:10px;padding-right:10px}.about,.contact{grid-template-columns:1fr;gap:42px}.facts{grid-template-columns:1fr}.fact,.fact+.fact{border-right:0;border-bottom:1px solid var(--ink);padding:15px 0}.fact:last-child{border-bottom:0}footer{display:block}footer span{display:block;margin-top:7px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project{transition:none}}
   </style>
 </head>
 <body>
-  <header class="shell nav">
-    <a class="brand" href="#top" aria-label="Página inicial"><span class="brand-mark">dw</span><span>Davi Wendell</span></a>
-    <nav class="nav-links" aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav>
-  </header>
-
-  <main id="top">
-    <section class="shell hero" aria-labelledby="hero-title">
-      <div class="hero-grid">
-        <div>
-          <span class="eyebrow">desenvolvedor web · belém, pa</span>
-          <h1 id="hero-title">Ideias que viram <em>produto.</em></h1>
-          <p class="hero-copy">Sou Davi Wendell, estudante de Ciência da Computação e desenvolvedor web. Este é um recorte dos projetos que estou construindo, estudando e colocando em prática.</p>
-          <div class="actions"><a class="button primary" href="#projetos">Ver projetos <span>↓</span></a><a class="button ghost" href="https://github.com/DAVIWENDELL">Abrir GitHub ↗</a></div>
-        </div>
-        <div class="terminal" aria-label="Resumo técnico do perfil">
-          <div class="terminal-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
-          <div class="terminal-body"><div><span class="prompt">$</span> cat profile.json</div><br><div>{</div><div>&nbsp;&nbsp;<span class="key">"name"</span>: <span class="value">"Davi Wendell"</span>,</div><div>&nbsp;&nbsp;<span class="key">"focus"</span>: <span class="value">"web development"</span>,</div><div>&nbsp;&nbsp;<span class="key">"tools"</span>: [</div><div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="value">"JavaScript", "SQL", "Git"</span></div><div>&nbsp;&nbsp;],</div><div>&nbsp;&nbsp;<span class="key">"status"</span>: <span class="value">"building"</span></div><div>}</div><br><div><span class="prompt">$</span> <span class="key">ready_to_build</span> <span class="value">true</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projetos" aria-labelledby="projects-title">
-      <div class="shell">
-        <div class="section-head"><div><span class="section-kicker">01 / projetos</span><h2 id="projects-title">Em destaque.</h2></div><p class="section-intro">Produtos e experiências selecionados para mostrar como penso, estudo e construo na prática.</p></div>
-        <div class="projects">
-          <a class="project" href="https://github.com/castrocompny/Nauticflow"><div><div class="project-top"><span class="project-index">01 — produto web</span><span class="arrow">↗</span></div><h3>Nauticflow</h3><p>Gestão inteligente para o turismo náutico.</p></div><div class="project-foot"><div class="tags"><span class="tag">produto</span><span class="tag">web</span></div></div></a>
-          <a class="project" href="https://github.com/DAVIWENDELL/Geolume"><div><div class="project-top"><span class="project-index">02 — SaaS</span><span class="arrow">↗</span></div><h3>Geolume</h3><p>Plataforma web SaaS de geoprocessamento automatizado.</p></div><div class="project-foot"><div class="tags"><span class="tag">FastAPI</span><span class="tag">PyQGIS</span><span class="tag">PostGIS</span></div></div></a>
-          <a class="project" href="https://github.com/castrocompny/toursflow"><div><div class="project-top"><span class="project-index">03 — produto digital</span><span class="arrow">↗</span></div><h3>toursflow</h3><p>Projeto selecionado para destaque da Castro Compny.</p></div><div class="project-foot"><div class="tags"><span class="tag">produto</span><span class="tag">Castro Compny</span></div></div></a>
-          <a class="project" href="https://github.com/DAVIWENDELL/UNAMA-CYPRESS"><div><div class="project-top"><span class="project-index">04 — testes</span><span class="arrow">↗</span></div><h3>UNAMA Cypress</h3><p>Aplicação acadêmica com testes automatizados end-to-end.</p></div><div class="project-foot"><div class="tags"><span class="tag">Cypress</span><span class="tag">JavaScript</span></div></div></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="sobre" aria-labelledby="about-title"><div class="shell about-grid"><div><span class="section-kicker">02 / sobre</span><h2 id="about-title">Construindo com intenção.</h2></div><div><p class="about-lead">Código é ferramenta. O objetivo é criar experiências úteis, claras e que resolvam problemas reais.</p><p class="about-copy">Sou estudante de Ciência da Computação, desenvolvedor web e sócio na <a href="https://github.com/castrocompny" style="color:var(--cyan)">Castro Compny</a>. Meu trabalho reúne projetos acadêmicos, produtos digitais e experimentos de software.</p><div class="skill-list"><span class="skill">JavaScript</span><span class="skill">HTML & CSS</span><span class="skill">SQL</span><span class="skill">Python</span><span class="skill">PHP</span><span class="skill">Laravel</span><span class="skill">Git</span></div></div></div></section>
-
-    <section class="section" id="contato" aria-labelledby="contact-title"><div class="shell contact"><div><span class="section-kicker">03 / contato</span><h2 id="contact-title">Vamos conversar sobre o próximo projeto?</h2></div><div class="actions"><a class="button primary" href="https://github.com/DAVIWENDELL">Falar pelo GitHub ↗</a></div></div></section>
+  <header class="wrap topbar"><a class="signature" href="#inicio">Davi <span>Wendell.</span></a><nav class="nav" aria-label="Navegação"><a href="#projetos">Projetos</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a></nav></header>
+  <main id="inicio">
+    <section class="wrap hero"><div class="hero-left"><div class="kicker">Estudante de Ciência da Computação · Desenvolvedor Web</div><h1>Davi<br><span style="color:var(--red)">Wendell.</span></h1><p class="hero-copy">Desenvolvimento web, produtos digitais e experiências construídas com curiosidade, código e intenção.</p></div><div class="hero-right"><div class="stamp"><div><b>DW</b><br>portfolio<br>seleção<br>2026</div></div><div class="hero-note"><span>Belém, PA<br>Brasil</span><span>JavaScript<br>SQL · Git</span></div></div></section>
+    <section class="wrap section" id="projetos"><div class="section-label">01 / trabalho selecionado</div><h2 class="section-title">Projetos que<br>merecem atenção.</h2><div class="project-list">
+      <a class="project" href="https://github.com/castrocompny/Nauticflow"><span class="project-no">001</span><span class="project-name">Nauticflow</span><span class="project-desc">Gestão inteligente para o turismo náutico.</span><span class="project-tags">produto web<br>Castro Compny</span><span class="project-arrow">↗</span></a>
+      <a class="project" href="https://github.com/DAVIWENDELL/Geolume"><span class="project-no">002</span><span class="project-name">Geolume</span><span class="project-desc">Plataforma web SaaS de geoprocessamento automatizado.</span><span class="project-tags">FastAPI · PyQGIS<br>PostGIS · Docker</span><span class="project-arrow">↗</span></a>
+      <a class="project" href="https://github.com/castrocompny/toursflow"><span class="project-no">003</span><span class="project-name">toursflow</span><span class="project-desc">Projeto selecionado para destaque da Castro Compny.</span><span class="project-tags">produto digital<br>Castro Compny</span><span class="project-arrow">↗</span></a>
+      <a class="project" href="https://github.com/DAVIWENDELL/UNAMA-CYPRESS"><span class="project-no">004</span><span class="project-name">UNAMA Cypress</span><span class="project-desc">Aplicação acadêmica com testes automatizados end-to-end.</span><span class="project-tags">Cypress · JavaScript<br>testes E2E</span><span class="project-arrow">↗</span></a>
+    </div></section>
+    <section class="wrap section" id="sobre"><div class="about"><div><div class="section-label">02 / sobre</div><p class="about-lead">Código bom não precisa gritar. Precisa funcionar e fazer sentido.</p></div><div><p class="about-copy">Sou estudante de Ciência da Computação, desenvolvedor web e sócio na <a href="https://github.com/castrocompny" style="color:var(--red);font-weight:800">Castro Compny</a>. Este portfólio reúne projetos acadêmicos, produtos digitais e experimentos de software.</p><p class="about-copy">Tecnologias presentes no meu trabalho:</p><div class="facts"><div class="fact"><strong>Web</strong><small>HTML · CSS · JavaScript</small></div><div class="fact"><strong>Dados</strong><small>SQL · PostGIS</small></div><div class="fact"><strong>Produto</strong><small>Git · Laravel · Python</small></div></div></div></div></section>
+    <section class="wrap section" id="contato"><div class="contact"><h2>Vamos fazer<br>algo bom?</h2><div class="contact-right"><p>Para conversar sobre projetos, oportunidades ou colaboração:</p><div class="contact-links"><a class="contact-link" href="mailto:davimagi1234@gmail.com">E-mail ↗</a><a class="contact-link" href="https://github.com/DAVIWENDELL">GitHub ↗</a></div></div></div></section>
   </main>
-  <footer class="shell"><span>© <span id="year"></span> Davi Wendell Ferreira de Lima</span><span>Projetado e publicado com GitHub Pages.</span></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer class="wrap"><span>© <span id="year"></span> Davi Wendell</span><span>Portfólio independente · GitHub Pages</span></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>
